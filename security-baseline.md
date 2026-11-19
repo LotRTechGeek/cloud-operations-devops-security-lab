@@ -85,3 +85,69 @@ PermitRootLogin prohibit-password
 - tfsec
 - IAM Least Privilege Review
 - AWS Secrets Manager Investigation
+
+## CloudTrail Implementation
+
+Date: 19 November 2026
+
+### Configuration
+
+Trail Name:
+cloud-operations-security-trail
+
+Trail Type:
+Multi-Region
+
+Management Events:
+- Read Events Enabled
+- Write Events Enabled
+
+Insights:
+- Disabled
+
+Log Storage:
+- Amazon S3
+- Server-side encryption enabled
+
+### Purpose
+
+Provides audit logging for account activity, infrastructure changes, resource modifications, and security-relevant events.
+
+### Benefits
+
+- Visibility of AWS account activity
+- Support for security investigations
+- Audit trail for infrastructure changes
+- Improved cloud security posture
+
+## CloudTrail Verification
+
+### Validation Activities
+
+CloudTrail successfully captured:
+
+- Trail creation
+- Logging activation
+- S3 bucket creation
+- S3 bucket policy modifications
+- Encryption configuration
+
+CloudTrail also recorded historical infrastructure events including:
+
+- EC2 instance deployment
+- Security Group creation
+- Elastic IP allocation and association
+- Instance termination
+- Key Pair import
+
+### Findings
+
+CloudTrail is functioning correctly and recording account activity, resource modifications and infrastructure lifecycle events.
+
+### Security Benefits
+
+- Auditability
+- Change tracking
+- Event attribution
+- Security investigations
+- Operational visibility
