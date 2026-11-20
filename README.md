@@ -49,3 +49,19 @@ Metrics monitored include:
 - CPU Credit Balance
 
 The dashboard provides real-time visibility into infrastructure performance and forms the foundation for future alerting and monitoring enhancements.
+
+## CloudWatch Alarms & SNS
+
+Implemented proactive monitoring using CloudWatch Alarms and Amazon SNS.
+
+Current Alarm:
+
+- linux-lab-high-cpu
+
+Notification Method:
+
+- Email via Amazon SNS
+
+Purpose:
+
+Provides automated alerting when defined infrastructure thresholds are exceeded.
