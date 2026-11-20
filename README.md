@@ -35,3 +35,17 @@ The goal is to build practical experience in operational monitoring, cloud secur
 - [ ] GitHub Actions CI Pipeline
 - [ ] tfsec Integration
 - [ ] Documentation & Architecture Diagrams
+
+## CloudWatch Monitoring Dashboard
+
+Implemented an Amazon CloudWatch dashboard to monitor operational health and performance of the Linux Lab environment.
+
+Metrics monitored include:
+
+- EC2 CPU Utilization
+- Network Inbound Traffic
+- Network Outbound Traffic
+- EC2 Status Checks
+- CPU Credit Balance
+
+The dashboard provides real-time visibility into infrastructure performance and forms the foundation for future alerting and monitoring enhancements.
