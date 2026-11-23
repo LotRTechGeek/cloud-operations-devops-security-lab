@@ -65,3 +65,91 @@ Notification Method:
 Purpose:
 
 Provides automated alerting when defined infrastructure thresholds are exceeded.
+
+# Cloud Operations, DevOps & Security Lab
+
+## Overview
+
+This project extends my Linux Infrastructure Lab by introducing cloud operations, security monitoring, audit logging, alerting, and DevOps automation using AWS.
+
+## Technologies
+
+- AWS EC2
+- AWS IAM
+- AWS CloudTrail
+- AWS CloudWatch
+- AWS SNS
+- GitHub Actions
+- Amazon Linux 2023
+
+## Completed
+
+### Security Baseline Assessment
+
+- IAM review
+- MFA review
+- Access key review
+- Security group review
+- SSH configuration review
+- Linux patch review
+
+### AWS CloudTrail
+
+Implemented account-wide audit logging.
+
+Features:
+
+- Multi-region trail
+- Encrypted S3 log storage
+- Read and write management events
+- Event history verification
+
+### AWS CloudWatch
+
+Created an operational dashboard monitoring:
+
+- EC2 CPU Utilization
+- Network In
+- Network Out
+- Instance Health Status
+- CPU Credit Balance
+
+### CloudWatch Alarms & SNS
+
+Implemented automated alerting.
+
+Features:
+
+- High CPU alarm
+- Amazon SNS integration
+- Email notifications
+- Alert validation
+
+### GitHub Actions
+
+Implemented a CI/CD workflow using GitHub Actions.
+
+Features:
+
+- Automatic workflow execution on push
+- Repository validation
+- Foundation for future Terraform and DevSecOps checks
+
+## Planned Enhancements
+
+- AWS Budgets
+- Terraform validation
+- tfsec security scanning
+- Infrastructure as Code for monitoring resources
+- Additional CloudWatch alarms
+- Cost optimisation review
+
+## Key Skills Demonstrated
+
+- Cloud Operations
+- AWS Security
+- Infrastructure Monitoring
+- Incident Alerting
+- Audit Logging
+- DevOps Automation
+- Git Version Control
