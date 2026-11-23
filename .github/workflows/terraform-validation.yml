@@ -16,7 +16,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: terraform
+        working-directory: Terraform
 
     steps:
       - name: Checkout Repository
@@ -38,6 +38,6 @@ jobs:
         uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: config
-          scan-ref: terraform
+          scan-ref: Terraform
           severity: HIGH,CRITICAL
           exit-code: "1"
