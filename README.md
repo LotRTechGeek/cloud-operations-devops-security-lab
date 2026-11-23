@@ -2,154 +2,180 @@
 
 ## Overview
 
-This project extends my Linux Infrastructure Lab by introducing cloud monitoring, security, auditing, alerting, and DevOps automation.
+This project extends my Linux Infrastructure Lab by introducing cloud operations, security monitoring, audit logging, automated alerting, Infrastructure as Code, CI/CD, and DevSecOps practices using AWS, Terraform, GitHub Actions, and Trivy.
 
-The goal is to build practical experience in operational monitoring, cloud security, Infrastructure as Code (IaC), CI/CD pipelines, and security best practices using AWS and Terraform.
+The goal is to build practical hands-on experience in operating, monitoring, securing, and automating cloud infrastructure while applying security and Infrastructure as Code best practices.
 
-## Technologies
-
-- AWS CloudWatch
-- AWS CloudTrail
-- AWS SNS
-- Terraform
-- GitHub Actions
-- tfsec
-- Amazon Linux 2023
-- EC2
-
-## Project Objectives
-
-- Establish a security baseline
-- Implement infrastructure monitoring
-- Implement security auditing
-- Create automated alerts
-- Build Infrastructure as Code validation pipelines
-- Introduce DevSecOps practices
-
-## Current Status
-
-- [ ] Security Baseline Assessment
-- [ ] CloudTrail Implementation
-- [ ] CloudWatch Monitoring
-- [ ] SNS Alerting
-- [ ] GitHub Actions CI Pipeline
-- [ ] tfsec Integration
-- [ ] Documentation & Architecture Diagrams
-
-## CloudWatch Monitoring Dashboard
-
-Implemented an Amazon CloudWatch dashboard to monitor operational health and performance of the Linux Lab environment.
-
-Metrics monitored include:
-
-- EC2 CPU Utilization
-- Network Inbound Traffic
-- Network Outbound Traffic
-- EC2 Status Checks
-- CPU Credit Balance
-
-The dashboard provides real-time visibility into infrastructure performance and forms the foundation for future alerting and monitoring enhancements.
-
-## CloudWatch Alarms & SNS
-
-Implemented proactive monitoring using CloudWatch Alarms and Amazon SNS.
-
-Current Alarm:
-
-- linux-lab-high-cpu
-
-Notification Method:
-
-- Email via Amazon SNS
-
-Purpose:
-
-Provides automated alerting when defined infrastructure thresholds are exceeded.
-
-# Cloud Operations, DevOps & Security Lab
-
-## Overview
-
-This project extends my Linux Infrastructure Lab by introducing cloud operations, security monitoring, audit logging, alerting, and DevOps automation using AWS.
+---
 
 ## Technologies
 
 - AWS EC2
+- Amazon Linux 2023
 - AWS IAM
 - AWS CloudTrail
-- AWS CloudWatch
-- AWS SNS
+- Amazon CloudWatch
+- Amazon SNS
+- AWS Budgets
+- Terraform
 - GitHub Actions
-- Amazon Linux 2023
+- Trivy
+- Git
+- GitHub
 
-## Completed
+---
 
-### Security Baseline Assessment
+## Project Objectives
 
-- IAM review
-- MFA review
-- Access key review
-- Security group review
-- SSH configuration review
-- Linux patch review
+- Establish and document a cloud security baseline
+- Review identity and access management controls
+- Implement account-wide audit logging
+- Monitor infrastructure health and performance
+- Configure automated operational alerts
+- Introduce cost monitoring
+- Manage monitoring configuration using Terraform
+- Build an automated Terraform CI pipeline
+- Integrate Infrastructure as Code security scanning
+- Demonstrate a practical DevSecOps remediation workflow
 
-### AWS CloudTrail
+---
 
-Implemented account-wide audit logging.
+## Current Status
 
-Features:
+- [x] Security Baseline Assessment
+- [x] CloudTrail Implementation
+- [x] CloudWatch Monitoring
+- [x] CloudWatch CPU Alarm
+- [x] SNS Email Alerting
+- [x] AWS Budget Monitoring
+- [x] Terraform Monitoring Configuration
+- [x] GitHub Actions CI Pipeline
+- [x] Terraform Format Validation
+- [x] Terraform Configuration Validation
+- [x] Trivy Infrastructure as Code Security Scanning
+- [x] DevSecOps Security Gate Testing
+- [x] Security Misconfiguration Remediation
+- [ ] Additional Monitoring Resources as Infrastructure as Code
+- [ ] Additional CloudWatch Security Monitoring
+- [ ] Architecture Diagram
+
+---
+
+## Security Baseline Assessment
+
+A security baseline assessment was performed against the existing Linux Infrastructure Lab before implementing additional monitoring and security controls.
+
+Areas reviewed included:
+
+- AWS IAM configuration
+- Root account MFA
+- IAM user MFA
+- Access key usage
+- IAM permissions
+- EC2 Security Groups
+- SSH configuration
+- SSH key authentication
+- Root login configuration
+- Linux patch status
+
+### Key Findings
+
+- MFA enabled for the AWS root account
+- MFA enabled for the administrative IAM user
+- Small IAM identity footprint
+- SSH access restricted to a trusted IP address
+- Password-based SSH authentication disabled
+- SSH key authentication enabled
+- No unnecessary management or database ports publicly exposed
+- Linux update status reviewed
+- Administrative permissions identified as an area for future least-privilege review
+
+The assessment established the security posture of the environment before introducing additional auditing, monitoring, and DevSecOps controls.
+
+---
+
+## AWS CloudTrail Audit Logging
+
+AWS CloudTrail was implemented to provide visibility into account activity and infrastructure changes.
+
+### Configuration
 
 - Multi-region trail
-- Encrypted S3 log storage
-- Read and write management events
-- Event history verification
+- Management event logging
+- Read and write event capture
+- Amazon S3 log storage
+- Audit event history verification
 
-### AWS CloudWatch
+CloudTrail successfully recorded infrastructure lifecycle and configuration activity including:
 
-Created an operational dashboard monitoring:
+- EC2 instance operations
+- Security Group changes
+- Elastic IP operations
+- CloudTrail configuration activity
+- S3 configuration activity
+
+This provides an audit trail that can support operational investigation, change tracking, and security analysis.
+
+---
+
+## CloudWatch Monitoring Dashboard
+
+An Amazon CloudWatch dashboard was created to provide operational visibility into the Linux Infrastructure Lab.
+
+### Metrics Monitored
 
 - EC2 CPU Utilization
 - Network In
 - Network Out
-- Instance Health Status
+- EC2 Status Checks
 - CPU Credit Balance
 
-### CloudWatch Alarms & SNS
+The dashboard provides a central view of infrastructure performance, health, and network activity.
 
-Implemented automated alerting.
+---
 
-Features:
+## CloudWatch Alarms & SNS Alerting
 
-- High CPU alarm
-- Amazon SNS integration
-- Email notifications
-- Alert validation
+Proactive monitoring was implemented using Amazon CloudWatch Alarms and Amazon SNS.
 
-### GitHub Actions
+### CPU Alarm
 
-Implemented a CI/CD workflow using GitHub Actions.
+**Alarm:** `linux-lab-high-cpu`
 
-Features:
+Configuration:
 
-- Automatic workflow execution on push
-- Repository validation
-- Foundation for future Terraform and DevSecOps checks
+- Metric: CPUUtilization
+- Threshold: Greater than 70%
+- Evaluation period: 5 minutes
 
-## Planned Enhancements
+### Notifications
 
-- AWS Budgets
-- Terraform validation
-- tfsec security scanning
-- Infrastructure as Code for monitoring resources
-- Additional CloudWatch alarms
-- Cost optimisation review
+The alarm is integrated with an Amazon SNS topic that delivers email notifications when the configured alarm threshold is exceeded.
 
-## Key Skills Demonstrated
+This changes monitoring from a passive dashboard into an automated alerting system.
 
-- Cloud Operations
-- AWS Security
-- Infrastructure Monitoring
-- Incident Alerting
-- Audit Logging
-- DevOps Automation
-- Git Version Control
+---
+
+## AWS Budget Monitoring
+
+AWS Budget monitoring was configured to improve visibility of cloud expenditure.
+
+A monthly cost budget and threshold notification provide early warning when spending reaches the configured level.
+
+This introduces cost awareness alongside operational and security monitoring and helps reduce the risk of unexpected cloud expenditure.
+
+---
+
+## Terraform Infrastructure as Code
+
+Terraform configuration was introduced to begin managing Project 3 monitoring resources through Infrastructure as Code.
+
+The current configuration defines the CloudWatch CPU alarm and uses input variables to separate reusable infrastructure configuration from environment-specific values.
+
+### Terraform Structure
+
+```text
+Terraform/
+├── .terraform.lock.hcl
+├── monitoring.tf
+└── variables.tf
